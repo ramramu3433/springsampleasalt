@@ -4,4 +4,4 @@ WORKDIR /app
 ADD . /app
 RUN ls
 RUN mvn clean install 
-ENTRYPOINT ["java","-jar","target/app1-1.0.war"]
+ENTRYPOINT ["java","-jar","target/SpringBootMavenExample-1.0.war"]
