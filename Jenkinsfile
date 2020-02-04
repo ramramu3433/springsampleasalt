@@ -33,14 +33,14 @@ pipeline {
             steps
             {
                 
-                
+              sh('kubectl apply -f servicedef.yaml')  
    }
         }
  stage('smoke-test')
         {
             steps
             {
-                curl localhost:90/app1
+                curl localhost:8080
             }
         }
     }
