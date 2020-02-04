@@ -9,7 +9,7 @@ spec:
   - name: app
     image: app1:$BUILD_ID
     ports:
-    - containerPort: 80
+    - containerPort: 8080
 
 ---
 
@@ -22,7 +22,7 @@ metadata:
 spec:
   ports:
   - port: 8080
-    targetPort: 4000
+    targetPort: 8080
   type: NodePort
   selector:
     app: app

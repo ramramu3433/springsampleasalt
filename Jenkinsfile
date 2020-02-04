@@ -39,8 +39,9 @@ pipeline {
  stage('smoke-test')
         {
             steps
-            {
-                curl localhost:8080
+            {   
+                sh ( "echo PORT_APP=$(kubectl get svc | grep app | awk '{print $3}' | awk -F':' '{print $2}')")
+                curl http://localhost:$PORT_APP
             }
         }
     }
